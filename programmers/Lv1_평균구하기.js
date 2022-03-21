@@ -12,7 +12,7 @@ function solution(arr) {
 const arr1 = [1, 2, 3, 4];
 console.log(`평균값: ${average(arr1)}`);
 
-// reduce method 적용
+// 다른 사람 풀이 : reduce method 적용
 function average(arr) {
   return arr.reduce((a, b) => a + b) / arr.length;
 }
