@@ -1,14 +1,10 @@
 function solution(s) {
-  let answer = true;
-  if (s.length !== 4 && s.length !== 6) {
-    answer = false;
+  const len = s.length;
+  if (len === 4 || len === 6) {
+    return s.split('').every(e => !isNaN(e));
   } else {
-    const arr = s.split('');
-    arr.forEach(element => {
-      isNaN(element) ? (answer = false) : null;
-    });
+    return false;
   }
-  return answer;
 }
 
 console.log(solution("a234"));
