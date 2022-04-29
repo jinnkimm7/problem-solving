@@ -1,0 +1,17 @@
+function solution(s) {
+  if (s[0] === ')') return false;
+  let right = 0;
+  let left = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === ')') right++;
+    else if (s[i] === '(') left++;
+  }
+
+  if (right === left) return true;
+  else return false;
+}
+
+console.log(solution('()()'));
+console.log(solution('(())()'));
+console.log(solution(')()('));
+console.log(solution('(()('));
