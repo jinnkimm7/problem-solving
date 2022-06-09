@@ -16,5 +16,12 @@ function solution(n) {
   return answer;
 }
 
+//또 다른 나의 풀이
+function solution(n) {
+  return Array(n).fill()
+    .map((v, i) => i + 1)
+    .filter(v => n % v === 1)[0];
+}
+
 console.log(solution(10));
 console.log(solution(12));
