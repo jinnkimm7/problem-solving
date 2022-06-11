@@ -7,13 +7,17 @@
 //   return arr.reduce((acc, cur) => acc + cur);
 // }
 
-function solution(numbers) {
-  let answer = 0;
-  for (let i = 0; i < 10; i++) {
-    if (!(numbers.includes(i))) answer += i;
-  }
+// function solution(numbers) {
+//   let answer = 0;
+//   for (let i = 0; i < 10; i++) {
+//     if (!(numbers.includes(i))) answer += i;
+//   }
 
-  return answer;
+//   return answer;
+// }
+
+function solution(numbers) {
+  return 45 - numbers.reduce((a, b) => a + b, 0);
 }
 
 console.log(solution([1, 2, 3, 4, 6, 7, 8, 0]));
