@@ -45,15 +45,36 @@ N을 K로 나눕니다.
 N과 K가 주어질 때 N이 1이 될 때까지 1번 혹은 2번의 과정을 수행해야 하는 최소 횟수를 구하는 프로그램을 작성하세요.
  */
 
-function solution(n, k) {
-  let count = 0;
-  while (n !== 1) {
-    n % k === 0 ? n = n / k : n = n - 1;
-    count++;
-  }
+// function solution(n, k) {
+//   let count = 0;
+//   while (n !== 1) {
+//     n % k === 0 ? n = n / k : n = n - 1;
+//     count++;
+//   }
 
-  return count;
+//   return count;
+// }
+
+// console.log(solution(17, 4));
+// console.log(solution(25, 5));
+
+/**
+ * 문제 2
+각 자리가 숫자(0부터 9)로만 이루어진 문자열 S가 주어졌을 때, 
+왼쪽부터 오른쪽으로 하나씩 모든 숫자를 확인하며 숫자 사이에 'X' 혹은 '+' 연산자를 넣어
+결과적으로 만들어질 수 있는 가장 큰 수를 구하는 프로그램을 작성하세요.
+단, +보다 X를 먼저 계산하는 일반적인 방식과는 달리, 모든 연산은 왼쪽에서부터 순서대로 이루어진다고 가정합니다.
+예를 들어, 02984 라는 문자열로 만들 수 있는 가장 큰 수는 ((((0+2)*9)*8)*4) = 576 입니다. 
+또한 만들어질 수 있는 가장 큰 수는 항상 20억 이하의 정수가 되도록 입력이 주어집니다. */
+
+function solution(s) {
+  const answer = s.split('').map(v => parseInt(v))
+    .reduce((a, b) => {
+      if (a <= 1 || b <= 1) return a + b;
+      else return a * b;
+    })
+  return answer;
 }
 
-console.log(solution(17, 4));
-console.log(solution(25, 5));
+console.log(solution('02984'));
+console.log(solution('567'));
