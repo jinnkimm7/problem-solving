@@ -63,17 +63,54 @@ D : 아래로 한 칸 이동
 01시 27분 45초
  */
 
-const n = prompt('0~23 입력 : ');
-let answer = 0;
+// const n = prompt('0~23 입력 : ');
+// let answer = 0;
 
-for (let hour = 0; hour <= n; hour++) {
-  for (let min = 0; min < 60; min++) {
-    for (let sec = 0; sec < 60; sec++) {
-      if ((String(hour) + String(min) + String(sec)).includes('3')) {
-        answer++;
-      }
-    }
+// for (let hour = 0; hour <= n; hour++) {
+//   for (let min = 0; min < 60; min++) {
+//     for (let sec = 0; sec < 60; sec++) {
+//       if ((String(hour) + String(min) + String(sec)).includes('3')) {
+//         answer++;
+//       }
+//     }
+//   }
+// }
+
+// console.log(answer);
+
+/**
+<문제2> 왕실의 나이트
+문제 설명
+
+행복 왕궁의 왕실 정원은 체스판과 같은 8 x 8 좌표 평면임. 왕실 정원의 특정한 한 칸에 나이트가 서있음. 나이트는 매우 충성스러운 신하로서 매일 무술을 연마함.
+나이트는 말을 타고 있기 때문에 이동을 할 때는 L자 형태로만 이동할 수 있으며 정원 밖으로는 나갈 수 없음
+나이트는 특정 위치에서 다음과 같은 두 가지 경우로 이동할 수 있음
+수평으로 두 칸 이동한 뒤에 수직으로 한 칸 이동하기
+수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기
+이처럼 8 x 8 좌표 평면상에서 나이트의 위치가 주어졌을 때 나이트가 이동할 수 있는 경우의 수를 출력하는 프로그램을 작성하시오. 왕실의 정원에서 행 위치를 표현할 때는 1부터 8로 표현하며, 열 위치를 표현할 때는 a부터 h로 표현함.
+
+c2에 있을 때 이동할 수 있는 경우의 수는 6가지임. 
+ */
+
+//a1 => (row, col) => (1,1)
+
+function knight(location) {
+  let col = location.charCodeAt(0) - 96;
+  let row = parseInt(location[1]);
+  let nextRow = row;
+  let nextCol = col;
+
+  let count = 0;
+
+  const move_types = [[1, -2], [2, -1], [-1, -2], [-2, -1],
+  [2, 1], [1, 2], [-2, 1], [-1, 2]];
+
+  for (let i = 0; i < move_types.length; i++) {
+    nextRow = row + move_types[i][0];
+    nextCol = col + move_types[i][1];
+    if (nextRow >= 1 && nextRow <= 8 && nextCol >= 1 && nextCol <= 8) count++;
   }
+  return count;
 }
 
-console.log(answer);
+console.log(knight("c2"));
