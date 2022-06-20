@@ -94,23 +94,47 @@ c2에 있을 때 이동할 수 있는 경우의 수는 6가지임.
 
 //a1 => (row, col) => (1,1)
 
-function knight(location) {
-  let col = location.charCodeAt(0) - 96;
-  let row = parseInt(location[1]);
-  let nextRow = row;
-  let nextCol = col;
+// function knight(location) {
+//   let col = location.charCodeAt(0) - 96;
+//   let row = parseInt(location[1]);
+//   let nextRow = row;
+//   let nextCol = col;
 
-  let count = 0;
+//   let count = 0;
 
-  const move_types = [[1, -2], [2, -1], [-1, -2], [-2, -1],
-  [2, 1], [1, 2], [-2, 1], [-1, 2]];
+//   const move_types = [[1, -2], [2, -1], [-1, -2], [-2, -1],
+//   [2, 1], [1, 2], [-2, 1], [-1, 2]];
 
-  for (let i = 0; i < move_types.length; i++) {
-    nextRow = row + move_types[i][0];
-    nextCol = col + move_types[i][1];
-    if (nextRow >= 1 && nextRow <= 8 && nextCol >= 1 && nextCol <= 8) count++;
+//   for (let i = 0; i < move_types.length; i++) {
+//     nextRow = row + move_types[i][0];
+//     nextCol = col + move_types[i][1];
+//     if (nextRow >= 1 && nextRow <= 8 && nextCol >= 1 && nextCol <= 8) count++;
+//   }
+//   return count;
+// }
+
+// console.log(knight("c2"));
+
+
+/**
+<문제> 문자열 재정렬
+문제 설명
+
+알파벳 대문자와 숫자(0~9)로만 구성된 문자열이 입력으로 주어짐, 이때 모든 알파벳을 오름차순으로 정렬하여 이어서 출력한 뒤에, 그 뒤에 모든 숫자를 더한 값을 이어서 출력함
+예를 들어 K1KA5CB7이라는 값이 들어오면 ABCKK13을 출력함
+ */
+function solution(s) {
+  const arrOfStr = [];
+  let sumOfNum = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (!isNaN(s[i])) sumOfNum += parseInt(s[i]);
+    else arrOfStr.push(s[i]);
   }
-  return count;
+
+  let answer = arrOfStr.sort().join('') + sumOfNum;
+
+  return answer;
 }
 
-console.log(knight("c2"));
+console.log(solution('K1KA5CB7'));
+console.log(solution('AJKDLSI412K4JSJ9D'));
