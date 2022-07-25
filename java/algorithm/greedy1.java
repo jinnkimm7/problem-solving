@@ -1,10 +1,15 @@
 package algorithm;
 
-public class greedy1 {
-
+public class Greedy1 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int n = 1260;
+		int count = 0;
+		int[] coinType = {500, 100, 50, 10};
+		
+		for(int i = 0; i < coinType.length; i++) {
+			count += n / coinType[i];
+			n %= coinType[i];
+		}
+		System.out.println(count);
 	}
-
 }
