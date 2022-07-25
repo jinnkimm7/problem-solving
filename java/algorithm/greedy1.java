@@ -1,4 +1,4 @@
-package algorithm;
+package java.algorithm;
 
 public class Greedy1 {
 	public static void main(String[] args) {
