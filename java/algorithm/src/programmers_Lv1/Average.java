@@ -1,4 +1,4 @@
-package algorithm;
+package programmers;
 
 class Average {
     public double solution(int[] arr) {        
