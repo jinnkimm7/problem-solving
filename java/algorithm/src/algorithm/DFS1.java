@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.Scanner;
 
-public class DfsnBfs1 {
+public class DFS1 {
 	public static int n, m; 
 	public static int[][] graph = new int[1000][1000];
 	
