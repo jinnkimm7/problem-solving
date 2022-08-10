@@ -1,6 +1,6 @@
 package programmers_Lv1;
 
-public class Solution {
+public class Caesar {
     public String solution(String s, int n) {
         String answer = "";
         
@@ -20,7 +20,7 @@ public class Solution {
     }
 	
 	public static void main(String[] args) {
-		Solution s = new Solution();
+		Caesar s = new Caesar();
 		System.out.println(s.solution("AB", 1));
 		System.out.println(s.solution("z", 1));
 		System.out.println(s.solution("a B z", 1));
