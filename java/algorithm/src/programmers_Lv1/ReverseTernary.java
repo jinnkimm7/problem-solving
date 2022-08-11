@@ -9,12 +9,12 @@ public class ReverseTernary {
 		
 //		10진법 -> 3진법(역순)
 		while(true) {
-			list.add(n % 3);
-			n /= 3;
 			if(n < 3) {
 				list.add(n);
 				break;
 			}
+			list.add(n % 3);
+			n /= 3;
 		}
 		
 //		3진법(역순) -> 10진법
