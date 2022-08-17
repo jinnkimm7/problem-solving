@@ -20,7 +20,7 @@ public class N2438 {
 			for(int j = 1; j <= i; j++) {
 				System.out.print("*");
 			}
-			sout
+			System.out.println();
 		}
 	}
 }
