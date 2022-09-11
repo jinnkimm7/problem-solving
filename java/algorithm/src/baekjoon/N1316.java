@@ -1,3 +1,4 @@
+package baekjoon;
 import java.util.*;
 public class N1316 {
 	
